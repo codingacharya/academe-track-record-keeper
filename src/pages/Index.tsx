@@ -1,10 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import { AuthLogin } from '@/components/AuthLogin';
 import { AdminDashboard } from '@/components/AdminDashboard';
 import { FacultyDashboard } from '@/components/FacultyDashboard';
 import { StudentDashboard } from '@/components/StudentDashboard';
-import { Sidebar } from '@/components/AppSidebar';
+import { AppSidebar } from '@/components/AppSidebar';
 import { SidebarProvider } from '@/components/ui/sidebar';
 
 export interface User {
@@ -135,7 +134,7 @@ const Index = () => {
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-gray-50">
-        <Sidebar user={currentUser} onLogout={logout} />
+        <AppSidebar user={currentUser} onLogout={logout} />
         <main className="flex-1 overflow-hidden">
           {renderDashboard()}
         </main>

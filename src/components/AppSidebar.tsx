@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { User, Users, Book, Calendar, LogOut, Plus } from 'lucide-react';
 import {
@@ -21,8 +20,9 @@ interface AppSidebarProps {
   onLogout: () => void;
 }
 
-export const Sidebar = ({ user, onLogout }: AppSidebarProps) => {
-  const { collapsed } = useSidebar();
+export const AppSidebar = ({ user, onLogout }: AppSidebarProps) => {
+  const { state } = useSidebar();
+  const collapsed = state === 'collapsed';
   const [activeSection, setActiveSection] = useState('dashboard');
 
   const getMenuItems = () => {
